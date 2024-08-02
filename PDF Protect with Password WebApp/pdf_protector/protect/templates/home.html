@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Protector</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'protect/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Protect PDF with Password</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="pdf">Upload PDF:</label>
+            <input type="file" name="pdf" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <br>
+            <button type="submit">Protect PDF</button>
+        </form>
+    </div>
+</body>
+</html>
